@@ -14,12 +14,19 @@
     var that = this;
     $('.player').on("click", "li", function (event) {
       $target = $(event.currentTarget)
-      if ($target.parent().attr("id") === "player2-hand") {
-        that.game.player2.playCard($target.index())
+      if ($target.parent().attr("id") === "player2-hand" &&
+            that.game.turn === 2) {
+        if(that.game.player2.playCard($target.index())){
+          that.game.endTurn();
+          that.game.player1.drawCards();
+        }
         that.game.player2.drawCards();
-      } else if ($target.parent().attr("id") === "player1-hand") {
-        that.game.player1.playCard($target.index())
-        that.game.player1.drawCards();
+      } else if ($target.parent().attr("id") === "player1-hand"  &&
+            that.game.turn === 1) {
+        if (that.game.player1.playCard($target.index())) {
+          that.game.endTurn();
+          that.game.player1.drawCards();
+        }
       }
       that.render();
     })
@@ -27,14 +34,16 @@
     $('.player').bind("contextmenu", "li", function(event){
       event.preventDefault();
       $target = $(event.target);
-      if ($target.parent().attr("id") === "player2-hand") {
-        console.log("here")
-       that.game.player2.discardCard($target.index())
-       that.game.player2.drawCards();
-      } else if ($target.parent().attr("id") === "player1-hand") {
-        console.log("here")
-       that.game.player1.discardCard($target.index())
-       that.game.player1.drawCards();
+      if ($target.parent().attr("id") === "player2-hand" &&
+            that.game.turn === 2) {
+        that.game.player2.discardCard($target.index())
+        that.game.player2.drawCards();
+        that.game.endTurn();
+      } else if ($target.parent().attr("id") === "player1-hand" &&
+            that.game.turn === 1) {
+        that.game.player1.discardCard($target.index())
+        that.game.player1.drawCards();
+        that.game.endTurn();
       }
       that.render();
     });

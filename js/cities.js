@@ -11,6 +11,11 @@
     this.player2 = new Cities.Player(this, this.deck);
     this.discardPiles = [];
     this.initDiscardPiles();
+    this.turn = 1;
+  };
+
+  Game.prototype.endTurn = function () {
+    this.turn = this.turn === 1 ? 2 : 1;
   };
 
   Game.prototype.initDiscardPiles = function () {
