@@ -34,19 +34,29 @@
     $('.player').bind("contextmenu", "li", function(event){
       event.preventDefault();
       $target = $(event.target);
-      if ($target.parent().attr("id") === "player2-hand" &&
-            that.game.turn === 2) {
-        that.game.player2.discardCard($target.index())
-        that.game.player2.drawCards();
-        that.game.endTurn();
-      } else if ($target.parent().attr("id") === "player1-hand" &&
-            that.game.turn === 1) {
-        that.game.player1.discardCard($target.index())
-        that.game.player1.drawCards();
-        that.game.endTurn();
-      }
-      that.render();
+      that.discardCard($target)
     });
+
+    $('.player').bind("taphold", "li", function(event){
+      event.preventDefault();
+      $target = $(event.target);
+      that.discardCard($target)
+    });
+  };
+
+  View.prototype.discardCard($target) {
+    if ($target.parent().attr("id") === "player2-hand" &&
+          that.game.turn === 2) {
+      that.game.player2.discardCard($target.index())
+      that.game.player2.drawCards();
+      that.game.endTurn();
+    } else if ($target.parent().attr("id") === "player1-hand" &&
+          that.game.turn === 1) {
+      that.game.player1.discardCard($target.index())
+      that.game.player1.drawCards();
+      that.game.endTurn();
+    }
+    this.render();
   };
 
   View.prototype.render = function () {
