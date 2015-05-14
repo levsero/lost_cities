@@ -20,13 +20,13 @@ html, body, figure, ul, li, h1, content, p {
   display: block;
 }
 
+ul {
+  list-style: none;
+}
+
 .rules {
   width: 80%;
   margin: 20px auto;
-}
-
-ul {
-  list-style: none;
 }
 
 body {
@@ -46,11 +46,6 @@ h1 {
   margin: auto;
 }
 
-.player {
-  width: 100px;
-  display: block;
-}
-
 .left {
   float: left;
 }
@@ -59,17 +54,23 @@ h1 {
   float: right;
 }
 
-ul {
-
+.player {
+  width: 120px;
+  display: block;
 }
 
 .hand li, .piles li, .discard-piles li {
-  padding: 10px 20px;
+  padding: 8px 15px;
+  margin: 2px;
 }
 
 .discard-piles {
-  width: 100px;
+  width: 120px;
   margin: 0px auto;
+}
+
+.piles li, .discard-piles li {
+  height: 20px;
 }
 
 .g {
