@@ -11,11 +11,6 @@
     this.player2 = new Cities.Player(this, this.deck);
     this.discardPiles = [];
     this.initDiscardPiles();
-    this.bindClicks();
-  };
-
-  Game.prototype.bindClicks = function () {
-    
   };
 
   Game.prototype.initDiscardPiles = function () {
@@ -29,6 +24,7 @@
   };
 
   Game.prototype.renderDiscardPiles = function ($el) {
+    $el.empty();
     for (var i = 0; i < this.discardPiles.length; i++) {
       $el.append("<li>" + Cities.COLORS[i] + " " +
         this.discardPiles[i].render());

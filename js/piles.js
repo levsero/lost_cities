@@ -11,8 +11,9 @@
     this.pile.push(card);
   }
 
-  Piles.prototype.canPlayCard = function (num) {
-    if (this.pile.length == 0 || num > this.pile[this.pile.length]) {
+  Piles.prototype.canPlayCard = function (card) {
+    if (this.pile.length == 0 ||
+          card.value > this.pile[this.pile.length - 1].value) {
       return true;
     }
     return false;

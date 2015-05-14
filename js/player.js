@@ -26,10 +26,12 @@
 
   Player.prototype.playCard = function (idx) {
     var card = this.hand[idx]
-    if (this.piles[card.colorIdx].canPlayCard(card)) {
-      this.piles[card.colorIdx].addCard(card);
-      this.hand.splice(idx, 1);
+    if (!this.piles[card.colorIdx].canPlayCard(card)) {
+      return false
     }
+    this.piles[card.colorIdx].addCard(card);
+    this.hand.splice(idx, 1);
+    return true
   }
 
   Player.prototype.discardCard = function (idx) {
