@@ -12,19 +12,23 @@
   }
 
   Deck.createDeck = function () {
-    var colors = ['b','g','w','y','p']
     var cards = [];
-    for (var i = 0; i < colors.length; i++) {
+    for (var i = 0; i < Cities.COLORS.length; i++) {
       for (var j = 0; j < 10; j++) {
-        cards.push([colors[i], j]);
+        cards.push(new Cities.Card(Cities.COLORS[i], j, i));
       }
     }
     return shuffle(cards);
   }
 
+  Cities.Card = function (color, value, colorIdx) {
+    this.color = color;
+    this.value = value;
+    this.colorIdx = colorIdx;
+  }
+
   function shuffle(o){
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
-};
-
+  };
 })();
