@@ -49,10 +49,11 @@
   }
 
   Player.prototype.renderPiles = function ($el) {
+    $el.empty();
     for (var i = 0; i < this.piles.length; i++) {
       $el.append("<li>" + Cities.COLORS[i] + " " +
         this.piles[i].render());
     }
-    return $el;
+    return $el.html();
   }
 })();

@@ -13,8 +13,14 @@
   View.prototype.bindClicks = function () {
     var that = this;
     $('.player').on("click", "li", function (event) {
-      that.game.player2.playCard($(event.currentTarget).index())
-      that.game.player2.drawCards();
+      $target = $(event.currentTarget)
+      if ($target.parent().attr("id") === "player2-hand") {
+        that.game.player2.playCard($target.index())
+        that.game.player2.drawCards();
+      } else if ($target.parent().attr("id") === "player1-hand") {
+        that.game.player1.playCard($target.index())
+        that.game.player1.drawCards();
+      }
       that.render();
     })
   };

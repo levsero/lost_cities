@@ -46,8 +46,8 @@
     this.player1.render($p1);
     this.player2.render($p2);
     this.renderDiscardPiles($discardPiles);
-    $p1Piles.html(this.player1.renderPiles($p1));
-    $p2Piles.html(this.player2.renderPiles($p2));
+    $p1Piles.html(this.player1.renderPiles($p1Piles));
+    $p2Piles.html(this.player2.renderPiles($p2Piles));
     $cards.append("Cards Remaining " + this.deck.deck.length)
   }
 })();
