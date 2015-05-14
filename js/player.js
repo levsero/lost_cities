@@ -31,11 +31,12 @@
     }
   }
 
-  Player.prototype.renderHand = function () {
-    string = "";
+  Player.prototype.render = function () {
+    $el = $("<ul>");
     for (var i = 0; i < this.hand.length; i++) {
-      string += (this.hand[i].color + this.hand[i].value + " ");
+      $el.append("<li>" + this.hand[i].color + " " +
+        this.hand[i].value + "</li>");
     }
-    return string.trim();
+    return $el;
   }
 })();
