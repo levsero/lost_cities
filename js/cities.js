@@ -41,8 +41,9 @@
   Game.prototype.renderDiscardPiles = function ($el) {
     $el.empty();
     for (var i = 0; i < this.discardPiles.length; i++) {
-      $el.append("<li>" + Cities.COLORS[i] + " " +
-        this.discardPiles[i].render());
+
+      $el.append('<li class="' + Cities.COLORS[i] + '"> ' +
+        this.discardPiles[i].render() + "</li>");
     }
     return $el;
   };

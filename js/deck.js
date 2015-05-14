@@ -14,7 +14,7 @@
   Deck.createDeck = function () {
     var cards = [];
     for (var i = 0; i < Cities.COLORS.length; i++) {
-      for (var j = 0; j < 10; j++) {
+      for (var j = 1; j < 11; j++) {
         cards.push(new Cities.Card(Cities.COLORS[i], j, i));
       }
     }

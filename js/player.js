@@ -42,7 +42,7 @@
 
   Player.prototype.render = function ($el) {
     for (var i = 0; i < this.hand.length; i++) {
-      $el.append("<li>" + this.hand[i].color + " " +
+      $el.append('<li class="' + this.hand[i].color + '"> ' +
         this.hand[i].value + "</li>");
     }
     return $el;
@@ -51,7 +51,7 @@
   Player.prototype.renderPiles = function ($el) {
     $el.empty();
     for (var i = 0; i < this.piles.length; i++) {
-      $el.append("<li>" + Cities.COLORS[i] + " " +
+      $el.append('<li class="' + Cities.COLORS[i] + '"> ' +
         this.piles[i].render());
     }
     return $el.html();
