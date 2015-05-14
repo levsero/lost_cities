@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lost Cities</title>
+    <link rel="stylesheet" type="text/css" href="css/cities.css">
+  </head>
+
+  <body>
+    <h1>Lost Cities</h1>
+
+    <figure class="cities-game"></figure>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/cities.js"></script>
+    <script src="js/deck.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/citiesView.js"></script>
+
+    <script>
+      $(function () {
+        new Cities.Deck();
+      });
+    </script>
+  </body>
+</html>
