@@ -23,6 +23,21 @@
       }
       that.render();
     })
+
+    $('.player').bind("contextmenu", "li", function(event){
+      event.preventDefault();
+      $target = $(event.target);
+      if ($target.parent().attr("id") === "player2-hand") {
+        console.log("here")
+       that.game.player2.discardCard($target.index())
+       that.game.player2.drawCards();
+      } else if ($target.parent().attr("id") === "player1-hand") {
+        console.log("here")
+       that.game.player1.discardCard($target.index())
+       that.game.player1.drawCards();
+      }
+      that.render();
+    });
   };
 
   View.prototype.render = function () {
