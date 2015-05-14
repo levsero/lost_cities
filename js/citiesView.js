@@ -44,7 +44,7 @@
     });
   };
 
-  View.prototype.discardCard($target) {
+  View.prototype.discardCard = function ($target) {
     if ($target.parent().attr("id") === "player2-hand" &&
           that.game.turn === 2) {
       that.game.player2.discardCard($target.index())
