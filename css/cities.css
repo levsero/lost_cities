@@ -1,4 +1,4 @@
-html, body, figure, ul, li, h1, content {
+html, body, figure, ul, li, h1, content, p {
   margin: 0;
   padding: 0;
   border: 0;
@@ -20,6 +20,11 @@ html, body, figure, ul, li, h1, content {
   display: block;
 }
 
+.rules {
+  width: 80%;
+  margin: 20px auto;
+}
+
 ul {
   list-style: none;
 }
@@ -28,6 +33,7 @@ body {
   font-family: sans-serif;
   text-align: center;
   font-weight: bold;
+  background: #eee;
 }
 
 h1 {
