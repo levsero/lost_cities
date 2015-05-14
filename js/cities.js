@@ -16,6 +16,16 @@
 
   Game.prototype.endTurn = function () {
     this.turn = this.turn === 1 ? 2 : 1;
+    if (this.gameOver) {
+      this.turn = -1;
+    }
+  };
+
+  Game.prototype.gameOver = function () {
+    if (this.deck.deck.length === 0) {
+      return true
+    }
+    return false
   };
 
   Game.prototype.initDiscardPiles = function () {
