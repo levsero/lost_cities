@@ -16,7 +16,7 @@
 
   Game.prototype.endTurn = function () {
     this.turn = this.turn === 1 ? 2 : 1;
-    if (this.gameOver) {
+    if (this.gameOver === true) {
       this.turn = -1;
     }
   };
