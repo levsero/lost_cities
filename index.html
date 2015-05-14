@@ -10,9 +10,16 @@
     <h1>Lost Cities</h1>
 
     <figure class="game group" id="game">
-      <content class="player left">Player1: <div id="player1"></div></content>
-      <content class="player right">Player2: <div id="player2"></div></content>
-      <content class="" id="cards"></content>
+      <content class="player left">Player1:
+        <ul id="player1-hand"></ul>
+        <ul id="player1-piles"></ul>
+      </content>
+      <content class="player right">Player2:
+        <ul id="player2-hand"></ul>
+        <ul id="player2-piles"></ul>
+      </content>
+      <content id="cards"></content>
+      <ul id="discard-piles"></ul>
     </figure>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

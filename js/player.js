@@ -3,7 +3,8 @@
     window.Cities = {};
   }
 
-  Player = Cities.Player = function (deck) {
+  Player = Cities.Player = function (game, deck) {
+    this.game = game;
     this.deck = deck;
     this.hand = [];
     this.piles = [];
@@ -26,16 +27,29 @@
   Player.prototype.playCard = function (idx) {
     var card = this.hand[idx]
     if (this.piles[card.colorIdx].canPlayCard(card)) {
-      this.piles[card.colorIdx].playCard(card);
+      this.piles[card.colorIdx].addCard(card);
       this.hand.splice(idx, 1);
     }
   }
 
-  Player.prototype.render = function () {
-    $el = $("<ul>");
+  Player.prototype.discardCard = function (idx) {
+    var card = this.hand[idx];
+    this.game.discardCard(card);
+    this.hand.splice(idx, 1);
+  }
+
+  Player.prototype.render = function ($el) {
     for (var i = 0; i < this.hand.length; i++) {
       $el.append("<li>" + this.hand[i].color + " " +
         this.hand[i].value + "</li>");
+    }
+    return $el;
+  }
+
+  Player.prototype.renderPiles = function ($el) {
+    for (var i = 0; i < this.piles.length; i++) {
+      $el.append("<li>" + Cities.COLORS[i] + " " +
+        this.piles[i].render());
     }
     return $el;
   }

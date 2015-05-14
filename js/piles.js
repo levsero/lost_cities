@@ -7,8 +7,8 @@
     this.pile = [];
   }
 
-  Piles.prototype.playCard = function (card) {
-    this.pile.push(card.value);
+  Piles.prototype.addCard = function (card) {
+    this.pile.push(card);
   }
 
   Piles.prototype.canPlayCard = function (num) {
@@ -17,4 +17,12 @@
     }
     return false;
   }
+
+  Piles.prototype.render = function () {
+    string = "";
+    for (var i = 0; i < this.pile.length; i++ ){
+      string += (this.pile[i].value + " ");
+    }
+    return string.trim();
+  };
 })();
