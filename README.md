@@ -1,4 +1,6 @@
 ## Lost Cities
+[Live](http://www.leviserebryanski.com/lost_cities/)
+
 ### Rules
 
 For the rules of the game click [here](http://www.happymeeple.com/en/board-games/lost-cities/rules/)
