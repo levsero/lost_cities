@@ -13,8 +13,8 @@ Starts as player1's turn. Left click to play card, right click to discard card. 
 
 ### TODO
 
+* Message at top of whose turn it currently is.
 * Pick from discard piles.
 * Modal of rules.
-* Not your turn messages.
 * New game button.
 * End of game message and score.
