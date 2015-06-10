@@ -41,6 +41,7 @@
   }
 
   Player.prototype.render = function ($el) {
+    $el.html("Hand:")
     for (var i = 0; i < this.hand.length; i++) {
       $el.append('<li class="' + this.hand[i].color + '"> ' +
         this.hand[i].value + "</li>");
@@ -49,7 +50,7 @@
   }
 
   Player.prototype.renderPiles = function ($el) {
-    $el.empty();
+    $el.html("Piles:");
     for (var i = 0; i < this.piles.length; i++) {
       $el.append('<li class="' + Cities.COLORS[i] + '"> ' +
         this.piles[i].render());

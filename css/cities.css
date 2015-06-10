@@ -102,3 +102,16 @@ h1 {
   color: purple;
   border: 2px solid purple;
 }
+
+.instruction {
+  color: red;
+}
+
+.turn {
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  width: 150px;
+  color: green;
+  background-color: red;
+}

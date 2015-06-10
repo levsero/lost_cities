@@ -54,16 +54,15 @@
     var $p1Piles = $el.find("#player1-piles");
     var $p2Piles = $el.find("#player2-piles");
     var $discardPiles = $el.find("#discard-piles");
-
     var $cards = $el.find("#cards");
-    $cards.empty();
-    $p1.empty();
-    $p2.empty();
+    var $turn = $el.find("#turn");
+
+    $turn.html("Player " + this.turn + "'s turn!")
     this.player1.render($p1);
     this.player2.render($p2);
     this.renderDiscardPiles($discardPiles);
     $p1Piles.html(this.player1.renderPiles($p1Piles));
     $p2Piles.html(this.player2.renderPiles($p2Piles));
-    $cards.append("Cards Remaining " + this.deck.deck.length)
+    $cards.html("Cards Remaining " + this.deck.deck.length)
   }
 })();
