@@ -16,7 +16,7 @@
 
   Game.prototype.endTurn = function () {
     this.turn = this.turn === 1 ? 2 : 1;
-    if (this.gameOver === true) {
+    if (this.gameOver() === true) {
       this.turn = -1;
     }
   };
@@ -64,5 +64,8 @@
     $p1Piles.html(this.player1.renderPiles($p1Piles));
     $p2Piles.html(this.player2.renderPiles($p2Piles));
     $cards.html("Cards Remaining " + this.deck.deck.length)
+    if (this.turn == -1) {
+      $turn.html("Game Over!")
+    }
   }
 })();

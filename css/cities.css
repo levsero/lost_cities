@@ -58,6 +58,9 @@ h1 {
   width: 120px;
   display: block;
 }
+.piles {
+  margin-top: 20px;
+}
 
 .hand li, .piles li, .discard-piles li {
   padding: 8px 15px;
@@ -104,7 +107,7 @@ h1 {
 }
 
 .instruction {
-  color: red;
+  color: blue;
 }
 
 .turn {

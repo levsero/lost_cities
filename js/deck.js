@@ -11,6 +11,10 @@
     return this.deck.pop();
   }
 
+  Deck.prototype.length = function () {
+    return this.deck.length;
+  }
+
   Deck.createDeck = function () {
     var cards = [];
     for (var i = 0; i < Cities.COLORS.length; i++) {

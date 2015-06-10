@@ -36,13 +36,6 @@
       $target = $(event.target);
       that.discardCard($target)
     });
-
-    // TODO this is not working
-    $('.player').bind("taphold", function(event){
-      event.preventDefault();
-      $target = $(event.target);
-      that.discardCard($target)
-    });
   };
 
   View.prototype.discardCard = function ($target) {
