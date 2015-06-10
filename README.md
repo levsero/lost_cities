@@ -16,4 +16,4 @@ Starts as player1's turn. Left click to play card, right click to discard card. 
 * Pick from discard piles.
 * Modal of rules.
 * New game button.
-* End of game message and score.
+* End of score.
